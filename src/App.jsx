@@ -104,11 +104,29 @@ function App() {
       <CssBaseline />
       <Container maxWidth="sm" sx={{ py: 3, pb: 15 }}>
         
-        {/* HEADER */}
-        <Box textAlign="center" mb={4} borderBottom="2px solid #FFD700" pb={2}>
-          <Typography variant="h3" color="primary" fontWeight={900} letterSpacing={-2}>YÉLY</Typography>
-          <Typography variant="subtitle2" letterSpacing={2} color="text.secondary">ENQUÊTE TERRAIN • MAFÉRÉ</Typography>
-          <Chip label={`${surveys.length} Validés`} color="primary" sx={{ mt: 1, fontWeight: 'bold' }} />
+        {/* HEADER AVEC LOGO */}
+        <Box textAlign="center" mb={4} borderBottom="2px solid #FFD700" pb={3}>
+          
+          {/* --- DÉBUT MODIFICATION : AJOUT DU LOGO ROND --- */}
+          <Box
+            component="img"
+            src="/logo.png"
+            alt="Logo Yély"
+            sx={{
+              width: 120,
+              height: 120,
+              borderRadius: '50%', // Cercle parfait
+              border: '4px solid #FFD700', // Bordure dorée
+              objectFit: 'cover',
+              mb: 2,
+              boxShadow: '0 0 20px rgba(255, 215, 0, 0.3)'
+            }}
+          />
+          {/* --- FIN MODIFICATION --- */}
+
+          <Typography variant="h3" color="primary" fontWeight={900} letterSpacing={-2} sx={{ lineHeight: 1 }}>YÉLY</Typography>
+          <Typography variant="subtitle2" letterSpacing={2} color="text.secondary" sx={{ mt: 1 }}>ENQUÊTE TERRAIN • MAFÉRÉ</Typography>
+          <Chip label={`${surveys.length} Validés`} color="primary" sx={{ mt: 2, fontWeight: 'bold' }} />
         </Box>
 
         <form onSubmit={handleSubmit}>
